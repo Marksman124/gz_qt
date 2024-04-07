@@ -1,0 +1,5 @@
+下拉框背景色
+
+background-color: rgb(237, 242, 255);/*背景颜色*/
+
+border-color:rgb(77, 123, 255);/*边框颜色*/

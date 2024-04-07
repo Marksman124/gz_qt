@@ -1,0 +1,2140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1905</width>
+    <height>1140</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="baseSize">
+    <size>
+     <width>1</width>
+     <height>1</height>
+    </size>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="0">
+     <widget class="QWidget" name="verticalWidget_2" native="true">
+      <property name="baseSize">
+       <size>
+        <width>1</width>
+        <height>1</height>
+       </size>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,10">
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0,2,0,2,1,0,1,2,4,2,6,0">
+          <item>
+           <widget class="QLabel" name="label_gif">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>64</width>
+              <height>64</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Button_Update">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>18</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">/**正常情况下样式**/
+QPushButton{
+	font: 18pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+    border-color: #2f3640;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/**鼠标停留在按钮上的样式**/
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+/**鼠标按压下去的样式**/
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}
+
+/**按钮失能情况下样式**/
+QPushButton::disabled{
+    color: #FFFFFF;
+    background-color: #dcdde1;
+    border-color: #dcdde1;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>刷新</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox">
+            <property name="font">
+             <font>
+              <family>Agency FB</family>
+              <pointsize>18</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">/*QCombobox主体*/
+QComboBox {
+    border: 2px solid #f3f3f3;/*设置线宽*/
+	background-color: rgb(237, 242, 255);/*背景颜色*/
+    border-radius: 15px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+	text-align:bottom;
+    min-width: 9em;   /*# 组合框的最小宽度*/
+    /*min-height: 5em;*/
+
+	border-style:solid;/*边框为实线型*/
+	border-width:2px;/*边框宽度*/
+	border-color:rgb(77, 123, 255);/*边框颜色*/
+
+	padding-left: 10px;/*左侧边距*/
+}
+/*QCombobox右侧按钮*/
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;/*放于右方顶部*/
+    width: 50px;/*设置按钮范围宽度*/
+ 	/*border-radius: 15px;
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;*/
+
+    border-top-right-radius: 3px;/*设置边框圆角*/
+    border-bottom-right-radius: 3px;
+/*padding-right: 50px;*/
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow {
+	border-image: url(:/image/down_list.png);
+	width: 10px;
+	height: 7px;
+}
+
+
+/* 下拉后，整个下拉窗体样式 */
+QComboBox QAbstractItemView {
+    border: 2px solid #f3f3f3;/*边框宽度、线形、颜色*/
+	background-color: rgba(237, 242, 255, 1);/*背景颜色*/
+    border-radius: 15px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+    min-width: 9em;   /*# 组合框的最小宽度*/
+}
+
+/* 下拉后，整个下拉窗体每项的样式 */
+QComboBox QAbstractItemView::item {
+	border-radius: 15px;/*圆角*/
+    height: 30px;   /* 项的高度（设置pComboBox-&gt;setView(new QListView());后，该项才起作用） */
+	background-color: rgb(237, 242, 255);
+
+}
+
+/*以下部分不知为何不生效，有待调试*/
+/* 下拉后，整个下拉窗体越过每项的样式 */
+QComboBox QAbstractItemView::item:hover {
+    color: #FFFFF0;
+       /* 整个下拉窗体越过每项的背景色 */
+	background-color: rgb(98, 0, 255);
+}
+
+/* 下拉后，整个下拉窗体被选择的每项的样式 */
+QComboBox QAbstractItemView::item:selected {
+    color: #FFFFF0;
+	background-color: rgb(0, 85, 200);
+}
+</string>
+            </property>
+            <property name="currentIndex">
+             <number>-1</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_Baud">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>18</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">/*QCombobox主体*/
+QComboBox {
+    border: 2px solid #f3f3f3;/*设置线宽*/
+	background-color: rgb(237, 242, 255);/*背景颜色*/
+    border-radius: 15px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+	text-align:bottom;
+    min-width: 9em;   /*# 组合框的最小宽度*/
+    /*min-height: 5em;*/
+
+	border-style:solid;/*边框为实线型*/
+	border-width:2px;/*边框宽度*/
+	border-color:rgb(77, 123, 255);/*边框颜色*/
+
+	padding-left: 10px;/*左侧边距*/
+}
+/*QCombobox右侧按钮*/
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;/*放于右方顶部*/
+    width: 50px;/*设置按钮范围宽度*/
+ 	/*border-radius: 15px;
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;*/
+
+    border-top-right-radius: 3px;/*设置边框圆角*/
+    border-bottom-right-radius: 3px;
+/*padding-right: 50px;*/
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow {
+	border-image: url(:/image/down_list.png);
+	width: 10px;
+	height: 7px;
+}
+
+
+/* 下拉后，整个下拉窗体样式 */
+QComboBox QAbstractItemView {
+    border: 2px solid #f3f3f3;/*边框宽度、线形、颜色*/
+	background-color: rgba(237, 242, 255, 1);/*背景颜色*/
+    border-radius: 15px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+    min-width: 9em;   /*# 组合框的最小宽度*/
+}
+
+/* 下拉后，整个下拉窗体每项的样式 */
+QComboBox QAbstractItemView::item {
+	border-radius: 15px;/*圆角*/
+    height: 30px;   /* 项的高度（设置pComboBox-&gt;setView(new QListView());后，该项才起作用） */
+	background-color: rgb(237, 242, 255);
+
+}
+
+/*以下部分不知为何不生效，有待调试*/
+/* 下拉后，整个下拉窗体越过每项的样式 */
+QComboBox QAbstractItemView::item:hover {
+    color: #FFFFF0;
+       /* 整个下拉窗体越过每项的背景色 */
+	background-color: rgb(98, 0, 255);
+}
+
+/* 下拉后，整个下拉窗体被选择的每项的样式 */
+QComboBox QAbstractItemView::item:selected {
+    color: #FFFFF0;
+	background-color: rgb(0, 85, 200);
+}
+</string>
+            </property>
+            <property name="currentIndex">
+             <number>2</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>2400</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4800</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>9600</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>19200</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>115200</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Button_Open">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>18</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">/**正常情况下样式**/
+QPushButton{
+	font: 18pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+    border-color: #2f3640;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/**鼠标停留在按钮上的样式**/
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+/**鼠标按压下去的样式**/
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}
+
+/**按钮失能情况下样式**/
+QPushButton::disabled{
+    color: #FFFFFF;
+    background-color: #dcdde1;
+    border-color: #dcdde1;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>打开串口</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>18</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">/**正常情况下样式**/
+QPushButton{
+	font: 18pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+    border-color: #2f3640;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/**鼠标停留在按钮上的样式**/
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+/**鼠标按压下去的样式**/
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}
+
+/**按钮失能情况下样式**/
+QPushButton::disabled{
+    color: #FFFFFF;
+    background-color: #dcdde1;
+    border-color: #dcdde1;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>重置</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_5">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>18</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>硬件版本：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>18</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>软件版本：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="label_software_version">
+              <property name="font">
+               <font>
+                <family>宋体</family>
+                <pointsize>18</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="label_hardware_version">
+              <property name="font">
+               <font>
+                <family>宋体</family>
+                <pointsize>18</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0,0,0,0">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout" stretch="1,4,1,4,3,0,2">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>接收列表:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Button_cleanRead">
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>18</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">/**正常情况下样式**/
+QPushButton{
+	font: 18pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+    border-color: #2f3640;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/**鼠标停留在按钮上的样式**/
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+/**鼠标按压下去的样式**/
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}
+
+/**按钮失能情况下样式**/
+QPushButton::disabled{
+    color: #FFFFFF;
+    background-color: #dcdde1;
+    border-color: #dcdde1;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>清空</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QTextEdit" name="Edit_Read">
+             <property name="font">
+              <font>
+               <family>宋体</family>
+               <pointsize>18</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+	border: 1px solid #A0A0A0; /* 边框宽度为1px，颜色为#A0A0A0 */
+	border-radius: 3px; /* 边框圆角 */
+	padding-left: 5px; /* 文本距离左边界有5px */
+	background-color: #F2F2F2; /* 背景颜色 */
+	color: #A0A0A0; /* 文本颜色 */
+	selection-background-color: #A0A0A0; /* 选中文本的背景颜色 */
+	selection-color: #F2F2F2; /* 选中文本的颜色 */
+	font-family: &quot;Microsoft YaHei&quot;; /* 文本字体族 */
+	font-size: 20pt; /* 文本字体大小 */
+}
+
+QLineEdit:hover { /* 鼠标悬浮在QLineEdit时的状态 */
+	border: 1px solid #298DFF;
+	border-radius: 3px;
+	background-color: #F2F2F2;
+        color: #298DFF;
+        selection-background-color: #298DFF;
+	selection-color: #F2F2F2;
+}
+
+QLineEdit[echoMode=&quot;2&quot;] { /* QLineEdit有输入掩码时的状态 */
+	lineedit-password-character: 9679;
+	lineedit-password-mask-delay: 2000;
+}
+
+QLineEdit:disabled { /* QLineEdit在禁用时的状态 */
+	border: 1px solid #CDCDCD;
+	background-color: #CDCDCD;
+	color: #B4B4B4;
+}
+
+QLineEdit:read-only { /* QLineEdit在只读时的状态 */
+	background-color: #CDCDCD;
+	color: #F2F2F2;
+}
+</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>发送列表:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Button_cleanSend">
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>18</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">/**正常情况下样式**/
+QPushButton{
+	font: 18pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+    border-color: #2f3640;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/**鼠标停留在按钮上的样式**/
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+/**鼠标按压下去的样式**/
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}
+
+/**按钮失能情况下样式**/
+QPushButton::disabled{
+    color: #FFFFFF;
+    background-color: #dcdde1;
+    border-color: #dcdde1;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>清空</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QTextEdit" name="Edit_Send">
+             <property name="font">
+              <font>
+               <family>宋体</family>
+               <pointsize>18</pointsize>
+              </font>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+            <widget class="QLabel" name="label_result">
+             <property name="font">
+              <font>
+               <family>微软雅黑</family>
+               <pointsize>72</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>合格</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,5,1,4,1">
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Button_start_test">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>5</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>1</width>
+                 <height>5</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>18</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">/**正常情况下样式**/
+QPushButton{
+	font: 18pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+    border-color: #2f3640;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/**鼠标停留在按钮上的样式**/
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+/**鼠标按压下去的样式**/
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}
+
+/**按钮失能情况下样式**/
+QPushButton::disabled{
+    color: #FFFFFF;
+    background-color: #dcdde1;
+    border-color: #dcdde1;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>开始测试</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Button_stop">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>18</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">/**正常情况下样式**/
+QPushButton{
+	font: 18pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+    border-color: #2f3640;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/**鼠标停留在按钮上的样式**/
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+/**鼠标按压下去的样式**/
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}
+
+/**按钮失能情况下样式**/
+QPushButton::disabled{
+    color: #FFFFFF;
+    background-color: #dcdde1;
+    border-color: #dcdde1;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>停止</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_7">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <item>
+              <widget class="QLabel" name="label_3">
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>故障列表：</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Button_cleanFault">
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>18</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">/**正常情况下样式**/
+QPushButton{
+	font: 18pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+    border-color: #2f3640;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/**鼠标停留在按钮上的样式**/
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+/**鼠标按压下去的样式**/
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}
+
+/**按钮失能情况下样式**/
+QPushButton::disabled{
+    color: #FFFFFF;
+    background-color: #dcdde1;
+    border-color: #dcdde1;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>清空</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QTextEdit" name="Edit_Fault">
+             <property name="font">
+              <font>
+               <family>宋体</family>
+               <pointsize>18</pointsize>
+              </font>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="valve_test">
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_valve_1">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>26</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>反冲洗</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_valve_3">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>26</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>正冲洗</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="label_valve_4">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>26</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>关闭</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_14">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>26</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>电磁阀位置检测</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="label_valve_5">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>26</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>排污</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QLabel" name="label_valve_6">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>26</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>过滤</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_valve_2">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>26</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>旁通</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="label_valve_1_1">
+                <property name="maximumSize">
+                 <size>
+                  <width>128</width>
+                  <height>128</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="label_valve_2_1">
+                <property name="maximumSize">
+                 <size>
+                  <width>128</width>
+                  <height>128</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLabel" name="label_valve_3_1">
+                <property name="maximumSize">
+                 <size>
+                  <width>128</width>
+                  <height>128</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLabel" name="label_valve_4_1">
+                <property name="maximumSize">
+                 <size>
+                  <width>128</width>
+                  <height>128</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <widget class="QLabel" name="label_valve_5_1">
+                <property name="maximumSize">
+                 <size>
+                  <width>128</width>
+                  <height>128</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QLabel" name="label_valve_6_1">
+                <property name="maximumSize">
+                 <size>
+                  <width>128</width>
+                  <height>128</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout" columnstretch="1,0">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_push_sensor">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>微软雅黑</family>
+               <pointsize>26</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+             </property>
+             <property name="text">
+              <string>压力传感器</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="lineEdit_Input_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>宋体</family>
+               <pointsize>26</pointsize>
+              </font>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="lineEdit_Input_5">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>宋体</family>
+               <pointsize>26</pointsize>
+              </font>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineEdit_Input_1">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>宋体</family>
+               <pointsize>26</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_warm">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>微软雅黑</family>
+               <pointsize>26</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+             </property>
+             <property name="text">
+              <string>警告信息</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineEdit_Input_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>宋体</family>
+               <pointsize>26</pointsize>
+              </font>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_push_switch">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>微软雅黑</family>
+               <pointsize>26</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+             </property>
+             <property name="text">
+              <string>压力开关</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="lineEdit_Input_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>宋体</family>
+               <pointsize>26</pointsize>
+              </font>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_temp_sensor">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>微软雅黑</family>
+               <pointsize>26</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+             </property>
+             <property name="text">
+              <string>温度传感器</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_Fault">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>微软雅黑</family>
+               <pointsize>26</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+             </property>
+             <property name="text">
+              <string>综合故障</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_solenoid_valve">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>26</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>电磁阀</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="lineEdit_Input_7">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>宋体</family>
+                 <pointsize>26</pointsize>
+                </font>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_DO_Output">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>26</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>DO输出</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="lineEdit_Input_6">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>宋体</family>
+                 <pointsize>26</pointsize>
+                </font>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="lineEdit_Input_8">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>宋体</family>
+                 <pointsize>26</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_DI_Input">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>26</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel {
+    /*font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;*/
+    color: #000000;
+    /*font-style: normal;
+    font-weight: normal;*/
+ 
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+ 
+    padding-left: 2px;
+    padding-top: 2px;
+ 
+    /*background-color: rgb(237, 242, 255);/*背景颜色*/
+    /*background-image: url(&quot;./image.png&quot;);*/
+    /*background-repeat: no-repeat;*/
+    background-position: left center;
+}
+
+
+QLabel:hover{
+color: red;
+border-color: green;
+    background-color: aqua;
+}
+
+QLabel:disabled{
+	color: blue;
+	border-color: brown;
+    background-color: aqua;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>DI输入</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>等待时间：</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_subtract">
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>:/images/subtract.jpg</normaloff>
+                 <activeoff>:/images/subtract02.jpeg</activeoff>:/images/subtract.jpg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>64</width>
+                 <height>64</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLCDNumber" name="lcdNumber">
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_plus">
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>:/images/plus.jpg</normaloff>
+                 <activeoff>:/images/plus02.png</activeoff>:/images/plus.jpg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>64</width>
+                 <height>64</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>宋体</family>
+               <pointsize>26</pointsize>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1905</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
