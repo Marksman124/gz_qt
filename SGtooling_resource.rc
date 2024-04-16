@@ -1,6 +1,6 @@
 #include <windows.h>
 
-IDI_ICON1	ICON	DISCARDABLE	"E:\\My_Project\\gz_qt\\app_icon.ico"
+IDI_ICON1	ICON	DISCARDABLE	"D:\\work_place\\My_project\\gz_qt\\app_icon.ico"
 
 VS_VERSION_INFO VERSIONINFO
 	FILEVERSION 0,0,0,0

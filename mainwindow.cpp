@@ -53,6 +53,11 @@ MainWindow::MainWindow(QWidget *parent)
     }
     //读文件
     ReData_From_File();
+
+    // 定时器
+    Versions_Timer = new QTimer(this);
+    connect(Versions_Timer, &QTimer::timeout, this, &MainWindow::onTimeout);
+
 }
 
 MainWindow::~MainWindow()
@@ -98,6 +103,9 @@ void MainWindow::on_Button_Open_clicked()
                 m_port->setFlowControl(QSerialPort::NoFlowControl);
                 //设置停止位
                 m_port->setStopBits(QSerialPort::OneStop);
+
+                //打开定时器
+                Versions_Timer->start(1000); // 定时器每1000毫秒触发一次
             }
             //打开串口
             else
@@ -368,7 +376,9 @@ void MainWindow::on_Button_start_test_clicked()
     QString str2;
     QPalette palette;
 
-    //QTimer *timer = new QTimer(this);
+    //关定时器
+    Versions_Timer->stop();
+
 
     ui->Edit_Fault->setTextColor(Qt::red);
     Task_Sopt = 0;
@@ -887,3 +897,43 @@ void MainWindow::on_toolButton_plus_clicked()
     ValveWaitTime*=10;
     ui->lcdNumber->setProperty("value",ValveWaitTime/2);
 }
+
+
+void MainWindow::onTimeout()
+{
+    QByteArray sendData;
+    uint16_t crc;
+    uint8_t p_data[8];
+
+    // 写死读 软件版本
+    sendData[0] = 8;
+    sendData[1] = 3;
+    sendData[2] = 0;
+    sendData[3] = 5;
+    sendData[4] = 0;
+    sendData[5] = 5;
+    for (int j=0;j<6;j++) {
+        p_data[j] = sendData[j];
+    }
+    crc = usMBCRC16(p_data,6);
+
+    sendData[6] = crc&0xFF;
+    sendData[7] = crc>>8;
+
+    m_port->write(sendData);
+
+    /*QString str1;
+    QString number;
+    QString msg;
+    QString str2;
+    QPalette palette;
+
+    str1 = "Number %1: %2";
+    number = QString::number((1), 10);
+    msg = sendData.toHex();
+    str2 = str1.arg(number).arg(msg);
+    ui->Edit_Send->append(str2);*/
+}
+
+
+

@@ -88,6 +88,8 @@ private slots:
 
     void on_toolButton_plus_clicked();
 
+    void onTimeout();
+
 private:
 
     void handleTimerEvent(void);
@@ -96,5 +98,6 @@ private:
     int open_flag;
     QSerialPort *serialPort;
     QSerialPort *m_port;
+    QTimer *Versions_Timer;
 };
 #endif // MAINWINDOW_H
